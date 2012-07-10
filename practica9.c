@@ -292,9 +292,9 @@ void perona_malik(float* red_input,float*green_input,float*blue_input,int width,
 #include <stdio.h>
 int main(){
   unsigned char *ro_ch,*ve_ch,*az_ch;
-  float *red_input,*red_output,*blue_input,*blue_output,*green_input,*green_output;
+  float *red_input,*red_output,*blue_input,*blue_output,*green_input,*green_output,lambda;
   char fentrada[200];
-  int i,niter,tam,h,w,lambda;
+  int i,niter,tam,h,w;
   float dt;
   printf("---------------MENU-----------------.\n");
   printf("Introduzca la direccion del archivo\n");
@@ -304,7 +304,7 @@ int main(){
   printf("Introduzca numero de iteraciones\n");
   scanf("%d",&niter);
   printf("Introduzca valor para el parámetro lambda\n");
-  scanf("%d",&lambda);
+  scanf("%f",&lambda);
   ami_read_bmp(fentrada,&ro_ch,&ve_ch,&az_ch, &w,&h);
   tam=w*h;
   red_input=(float*)malloc(tam*sizeof(float));
